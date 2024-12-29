@@ -192,7 +192,7 @@ Ce fichier Arduino est utilisé pour :
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## PARTIE 3:
-##fichiers concernés : serveur.py / index.html / logement1.html / logement2.html / logement3.html / suivant.html / page_capteurs.html
+##fichiers/dossier concernés : serveur.py / index.html / logement1.html / logement2.html / logement3.html / suivant.html / page_capteurs.html / asserts 
 
 ### Structure des Fichiers
 
@@ -242,6 +242,14 @@ Cette page est dédiée à l'ajout de capteurs personnalisés. Elle propose :
   - Une liste des actionneurs compatibles est affichée en fonction des capteurs sélectionnés.
 - **Navigation :**
   - Un bouton permet de revenir facilement à la page d'accueil.
+
+
+ ### 6. `assets`
+# Instructions pour le dossier `assets`
+
+Le dossier `assets` doit être placé dans le **même répertoire** que les autres fichiers du projet.  
+Ce dossier est utilisé pour afficher les photos sur le site.
+
 
 ## Prérequis
 - Python 3.8 ou supérieur
