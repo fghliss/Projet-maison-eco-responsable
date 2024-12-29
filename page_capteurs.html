@@ -1,0 +1,138 @@
+<!-- Source en bas de  la page -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisation avec vos propres capteurs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .top-bar {
+            background-color: #388e3c;
+            height: 20px;
+            width: 100%;
+        }
+
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #388e3c;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            margin-top: 40px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #388e3c;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        .btn:hover {
+            background-color: #2c6b2f;
+        }
+
+        /* Aligner le texte des actionneurs à gauche */
+        .actionneurs {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #2c6b2f;
+            text-align: left; /* Aligner à gauche */
+            padding-left: 20px; /* Ajouter un peu d'espace à gauche */
+        }
+
+        .actionneurs ul {
+            padding-left: 20px; /* Décalage supplémentaire pour la liste */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barre verte en haut -->
+    <div class="top-bar"></div>
+
+    <div class="main-content">
+        <h1>Affichage de la Température et de l'Humidité</h1>
+
+        <!-- Graphique de Température et Humidité -->
+        <div class="chart-container">
+            <canvas id="tempHumidityChart"></canvas>
+        </div>
+
+        <!-- Proposition d'Actionneurs -->
+        <div class="actionneurs">
+            <h2>Actionneurs recommandés</h2>
+            <p>Voici quelques actionneurs que vous pouvez utiliser avec vos capteurs :</p>
+            <ul>
+                <li>Actionneur 1 : Contrôle de la ventilation</li>
+                <li>Actionneur 2 : Contrôle du chauffage</li>
+                <li>Actionneur 3 : Commande des stores pour optimiser la température intérieure</li>
+            </ul>
+        </div>
+
+        <a href="/" class="btn">Retour à la page d'accueil</a>
+    </div>
+
+    <script>
+        // Données d'exemple pour le graphique (température et humidité)
+        const labels = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+        const tempData = [22, 23, 21, 19, 20, 25, 28, 27, 24, 22, 20, 21]; // Température en °C
+        const humidityData = [60, 65, 55, 58, 52, 50, 48, 45, 53, 57, 62, 64]; // Humidité en %
+
+        const ctx = document.getElementById('tempHumidityChart').getContext('2d');
+        const tempHumidityChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Température (°C)',
+                    data: tempData,
+                    borderColor: 'rgb(75, 192, 192)',
+                    fill: false,
+                    tension: 0.1
+                }, {
+                    label: 'Humidité (%)',
+                    data: humidityData,
+                    borderColor: 'rgb(255, 159, 64)',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Source : Chatgpt -->
