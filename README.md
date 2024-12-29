@@ -273,3 +273,7 @@ Ce dossier est utilisé pour afficher les photos sur le site.
 ## Sources
 - ChatGPT (assisté pour la génération des scripts Python et HTML).
 - Moodle (références pédagogiques).
+
+  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Toutes les installations se trouvent sur le répertoir
